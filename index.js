@@ -98,5 +98,5 @@ const path = require('path');
 function listFiles(folderPath) {
     const files = fs.readdirSync(folderPath);
 
-    return files.map(fileName => folderPath + '/' + fileName);
+    return files.filter(fileName => fileName.slice(-4) == '.svg').map(fileName => folderPath + '/' + fileName);
 }
